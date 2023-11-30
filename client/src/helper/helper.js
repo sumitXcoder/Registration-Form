@@ -2,7 +2,6 @@ import axios from 'axios';
 import jwt_decode from 'jwt-decode';
 
 axios.defaults.baseURL = process.env.REACT_APP_SERVER_DOMAIN;
-console.log(axios.defaults.baseURL)
 /** To get username from Token */
 export async function getUsername(){
     const token = localStorage.getItem('token')
