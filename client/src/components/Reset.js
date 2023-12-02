@@ -13,7 +13,7 @@ export default function Reset() {
 
   const { username } = useAuthStore(state => state.auth);
   const navigate = useNavigate();
-  const [{ isLoading, apiData, status, serverError }] = useFetch('createResetSession')
+  const [{ isLoading, status, serverError }] = useFetch('createResetSession')
 
   const formik = useFormik({
     initialValues : {
@@ -39,7 +39,7 @@ export default function Reset() {
   })
 
 
-  if(isLoading) return <h1 className='text-2xl font-bold'>isLoading</h1>;
+  if(isLoading) return <h1 className='text-2xl font-bold'>Loading</h1>;
   if(serverError) return <h1 className='text-xl text-red-500'>{serverError.message}</h1>
   if(status && status !== 201) return <Navigate to={'/password'} replace={true}></Navigate>
 
@@ -53,8 +53,8 @@ export default function Reset() {
             </span>
           </div>
 
-          <form className='py-20' onSubmit={formik.handleSubmit}>
-              <div className="textbox flex flex-col items-center gap-6">
+          <form className='py-5' onSubmit={formik.handleSubmit}>
+              <div className="textbox flex flex-col gap-5">
                  <Input name="New Password" props={formik.getFieldProps("password")}/>
                  <Input name="Confirm Password" props={formik.getFieldProps("confirm_pwd")}/>
                   <Submit name="Reset"/>
@@ -65,3 +65,4 @@ export default function Reset() {
         </Panel>
   )
 }
+

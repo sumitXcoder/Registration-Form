@@ -73,7 +73,7 @@ export default function Recovery() {
             </span>
             <input
               onChange={(e) => setOTP(e.target.value)}
-              className="border-0 px-3 py-3 rounded-xl w-3/4 h-2/3 shadow-sm text-lg"
+              className="bg-[#e8e8e899] px-4 py-3 rounded-xl text-lg w-full shadow-[inset_3px_3px_7px_#bebebe,inset_-3px_-3px_7px_#ffffff] focus:shadow-[inset_-3px_-3px_7px_#bebebe,inset_3px_3px_7px_#ffffff] outline-none border-2 border-gray-250"
               type="text"
               placeholder='OTP' />
           </div>
@@ -82,10 +82,10 @@ export default function Recovery() {
       </form>
 
       <div className="text-center py-4">
-        <span className='text-gray-500'>Can't get OTP?
+        <span className='text-gray-500'>Can't get OTP? 
           <button
             onClick={resendOTP}
-            className='text-red-500'>Resend</button></span>
+            className='text-red-500'> Resend</button></span>
       </div>
 
     </Panel>
